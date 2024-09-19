@@ -14,9 +14,10 @@ public class LoginModel : Queries
     [DataType(DataType.Password)]
     public string Password { get; set; }
 
+    public int role {get; set;}
     public override string insert()
     {
-        return string.Format($"INSERT INTO Users(username, password) VALUES('{Username}','{Password}')");
+        return string.Format($"INSERT INTO Users(username, password,fk_role) VALUES('{Username}','{Password}',{1})");
     }
 
 }
