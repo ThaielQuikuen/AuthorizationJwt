@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\authorizationjwt-main\\ATDapi.csproj": {}
+    "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\ATDapi.csproj": {}
   },
   "projects": {
-    "D:\\authorizationjwt-main\\ATDapi.csproj": {
+    "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\ATDapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\authorizationjwt-main\\ATDapi.csproj",
+        "projectUniqueName": "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
         "projectName": "ATDapi",
-        "projectPath": "D:\\authorizationjwt-main\\ATDapi.csproj",
+        "projectPath": "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
         "packagesPath": "C:\\Users\\hilet.HILET\\.nuget\\packages\\",
-        "outputPath": "D:\\authorizationjwt-main\\obj\\",
+        "outputPath": "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hilet.HILET\\AppData\\Roaming\\NuGet\\NuGet.Config",

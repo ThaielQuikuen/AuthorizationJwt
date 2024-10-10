@@ -184,25 +184,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "ATDapi.Controllers.UsersController",
-    "Method": "Post",
-    "RelativePath": "UsersController/Post",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "ATDapi.Responses.BaseResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   }
 ]

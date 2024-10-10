@@ -8,6 +8,7 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ATDapi.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 [ApiController]
 public class AuthController : ControllerBase
@@ -27,6 +28,8 @@ public class AuthController : ControllerBase
     [Route("AuthController/Get")]
     public async Task<BaseResponse> Get()
     {
+        var pathBase = HttpContext.User.Claims;
+
         string query = loginModel.select(tabla);
         try
         {
@@ -44,11 +47,16 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
         var rsp = await repository.GetByQuery<dynamic>($"SELECT password FROM Users WHERE Users.username = '{model.Username}'");
-        if (model.Password == rsp.password) { 
-        //if (model is { Username: "test", Password: "test" }){
+
+        var passwordHasher = new PasswordHasher<object>();
+        var result = passwordHasher.VerifyHashedPassword(null, rsp.password, model.Password);
+
+
+        if (result == PasswordVerificationResult.Success)
+        {
             var token = GenerateAccessToken(model.Username);
-            
-            return Ok(new { AccessToken = new JwtSecurityTokenHandler().WriteToken(token)});
+
+            return Ok(new { AccessToken = new JwtSecurityTokenHandler().WriteToken(token) });
         }
         return Unauthorized("Invalid credentials");
     }

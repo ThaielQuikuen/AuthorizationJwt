@@ -1,17 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\authorizationjwt-main\\",
+  "WorkspaceRootPath": "C:\\Users\\hilet.HILET\\source\\repos\\authorizationJwt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|d:\\authorizationjwt-main\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\hilet.hilet\\source\\repos\\authorizationjwt\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|D:\\authorizationjwt-main\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|D:\\authorizationjwt-main\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|C:\\Users\\hilet.HILET\\source\\repos\\authorizationJwt\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,43 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LogInModel.cs",
-              "DocumentMoniker": "D:\\authorizationjwt-main\\Models\\LogInModel.cs",
-              "RelativeDocumentMoniker": "Models\\LogInModel.cs",
-              "ToolTip": "D:\\authorizationjwt-main\\Models\\LogInModel.cs",
-              "RelativeToolTip": "Models\\LogInModel.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBUAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T11:54:55.393Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "D:\\authorizationjwt-main\\Repositories\\Repository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Repository.cs",
-              "ToolTip": "D:\\authorizationjwt-main\\Repositories\\Repository.cs",
-              "RelativeToolTip": "Repositories\\Repository.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAgwC8AAAAwAAAA",
+              "Title": "LogInModel.cs",
+              "DocumentMoniker": "C:\\Users\\hilet.HILET\\source\\repos\\authorizationJwt\\Models\\LogInModel.cs",
+              "RelativeDocumentMoniker": "Models\\LogInModel.cs",
+              "ToolTip": "C:\\Users\\hilet.HILET\\source\\repos\\authorizationJwt\\Models\\LogInModel.cs",
+              "RelativeToolTip": "Models\\LogInModel.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAgwB0AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T12:22:16.525Z"
+              "WhenOpened": "2024-09-16T11:54:55.393Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\authorizationjwt-main\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\hilet.HILET\\source\\repos\\authorizationJwt\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "D:\\authorizationjwt-main\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\hilet.HILET\\source\\repos\\authorizationJwt\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAQwFIAAAAMAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCAAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T11:12:04.419Z",
+              "WhenOpened": "2024-10-10T11:14:12.997Z",
               "EditorCaption": ""
             }
           ]
