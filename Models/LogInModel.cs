@@ -15,6 +15,8 @@ public class LoginModel : Queries
     [DataType(DataType.Password)]
     public string Password { get; set; }
 
+    public IFormFile? Photo {get; set;}
+
     public int role {get; set;}
     public string HashearPassword(string password)
     {
@@ -25,7 +27,6 @@ public class LoginModel : Queries
     public override string insert()
     {
         string hash = this.HashearPassword(this.Password);
-
         return string.Format($"INSERT INTO Users(username, password,fk_role) VALUES('{Username}','{hash}',{1})");
     }
 

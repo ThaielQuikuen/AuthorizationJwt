@@ -6,4 +6,8 @@ public abstract class Queries{
     {
         return string.Format($"SELECT * FROM {tabla}");
     }
+    public string selectbyUser()
+    {
+        return string.Format($"SELECT username FROM Users WHERE Users.username = ''");
+    }
 }

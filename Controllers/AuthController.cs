@@ -29,7 +29,6 @@ public class AuthController : ControllerBase
     public async Task<BaseResponse> Get()
     {
         var pathBase = HttpContext.User.Claims;
-
         string query = loginModel.select(tabla);
         try
         {
@@ -42,16 +41,12 @@ public class AuthController : ControllerBase
         }
     }
 
-
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
         var rsp = await repository.GetByQuery<dynamic>($"SELECT password FROM Users WHERE Users.username = '{model.Username}'");
-
         var passwordHasher = new PasswordHasher<object>();
         var result = passwordHasher.VerifyHashedPassword(null, rsp.password, model.Password);
-
-
         if (result == PasswordVerificationResult.Success)
         {
             var token = GenerateAccessToken(model.Username);
@@ -67,7 +62,6 @@ public class AuthController : ControllerBase
         {
             new Claim(ClaimTypes.Name, userName),
         };
-
         var token = new JwtSecurityToken(
             issuer: _configuration["JwtSettings:Issuer"],
             audience: _configuration["JwtSettings:Audience"],
@@ -76,9 +70,9 @@ public class AuthController : ControllerBase
             signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"])),
                 SecurityAlgorithms.HmacSha256)
         );
-
         return token;
     }
+
     [HttpPost]
     [Route("AuthController/post")]
     public async Task<BaseResponse> Post([FromBody] LoginModel model)
@@ -86,13 +80,24 @@ public class AuthController : ControllerBase
         string query = model.insert();
         try
         {
-            var rsp = await repository.InsertByQuery(query);
-
-            return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "User correctly created", data: rsp);
+            var rsp1 = await repository.GetByQuery<dynamic>($"SELECT username FROM Users WHERE Users.username = '{model.Username}'");
+            if (rsp1 == null){
+                var rsp = await repository.InsertByQuery(query);
+                return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "User correctly created", data: rsp);
+            }else{
+                return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "El numbre de usuario ya existe. Elija uno distinto", data: rsp1);
+            }     
         }
         catch (Exception Ex)
         {
             return new BaseResponse(false, (int)HttpStatusCode.InternalServerError, Ex.Message);
         }
     }
+    [HttpPatch]
+    [Route("AuthController/Patch")]
+    
+        
+    
+
+
 }

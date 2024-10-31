@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bnn6RO7IgVkpCT1tB3eXRyG37sAmPUX5YEN+fOrj1/asE0yYTN+u4zF5Qgjf6Jn3NUZlFrpjVDZdEXeKDPq3NA==",
+  "dgSpecHash": "46UuHqlXtGu0sanLqEFckGh3ER6eluFA6Y7p1FEuSZgDeCggvj0kvGujoDHYtIT+3WXfHbO46f02nZbnTNXH/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
+  "projectFilePath": "C:\\Users\\hilet.HILET\\authorizationJwt\\ATDapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hilet.HILET\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\hilet.HILET\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",

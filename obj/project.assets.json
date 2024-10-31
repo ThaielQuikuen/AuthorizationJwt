@@ -1782,11 +1782,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
+      "projectUniqueName": "C:\\Users\\hilet.HILET\\authorizationJwt\\ATDapi.csproj",
       "projectName": "ATDapi",
-      "projectPath": "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
+      "projectPath": "C:\\Users\\hilet.HILET\\authorizationJwt\\ATDapi.csproj",
       "packagesPath": "C:\\Users\\hilet.HILET\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hilet.HILET\\Source\\Repos\\authorizationJwt\\obj\\",
+      "outputPath": "C:\\Users\\hilet.HILET\\authorizationJwt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hilet.HILET\\AppData\\Roaming\\NuGet\\NuGet.Config",
