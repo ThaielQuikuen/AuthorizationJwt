@@ -9,7 +9,7 @@ public class LoginModel : Queries
 {
     public int? id { get; set; }
     [Required(ErrorMessage = "El nombre de usuario es requerido.")]
-    public string Username { get; set; }
+    public string Usuario { get; set; }
 
     [Required(ErrorMessage = "La contraseña es requerida.")]
     [DataType(DataType.Password)]
@@ -27,7 +27,7 @@ public class LoginModel : Queries
     public override string insert()
     {
         string hash = this.HashearPassword(this.Password);
-        return string.Format($"INSERT INTO Users(username, password,fk_role) VALUES('{Username}','{hash}',{1})");
+        return string.Format($"INSERT INTO Usuarios(usuario , password,fk_role) VALUES('{Usuario}','{hash}',{1})");
     }
 
 }

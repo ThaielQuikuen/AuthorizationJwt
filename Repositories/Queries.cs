@@ -8,6 +8,6 @@ public abstract class Queries{
     }
     public string selectbyUser()
     {
-        return string.Format($"SELECT username FROM Users WHERE Users.username = ''");
+        return string.Format($"SELECT usuario  FROM Usuarios WHERE Usuarios.usuario  = ''");
     }
 }
