@@ -49,7 +49,7 @@ public class AuthController : ControllerBase
         var result = passwordHasher.VerifyHashedPassword(null, rsp.password, model.Password);
         if (result == PasswordVerificationResult.Success)
         {
-            var token = GenerateAccessToken(model.Username);
+            var token = GenerateAccessToken(model.Usuario);
 
             return Ok(new { AccessToken = new JwtSecurityTokenHandler().WriteToken(token) });
         }
