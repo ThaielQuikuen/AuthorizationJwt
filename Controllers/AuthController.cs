@@ -22,7 +22,7 @@ public class AuthController : ControllerBase
         this._configuration = configuration;
     }
 
-    string tabla = "Users";
+    string tabla = "Usuarios";
 
     [HttpGet]
     [Route("AuthController/Get")]
@@ -44,7 +44,7 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
-        var rsp = await repository.GetByQuery<dynamic>($"SELECT password FROM Users WHERE Users.username = '{model.Username}'");
+        var rsp = await repository.GetByQuery<dynamic>($"SELECT password FROM Usuarios WHERE Usuarios.usuario  = '{model.Usuario}'");
         var passwordHasher = new PasswordHasher<object>();
         var result = passwordHasher.VerifyHashedPassword(null, rsp.password, model.Password);
         if (result == PasswordVerificationResult.Success)
@@ -80,7 +80,7 @@ public class AuthController : ControllerBase
         string query = model.insert();
         try
         {
-            var rsp1 = await repository.GetByQuery<dynamic>($"SELECT username FROM Users WHERE Users.username = '{model.Username}'");
+            var rsp1 = await repository.GetByQuery<dynamic>($"SELECT usuario  FROM Usuarios WHERE Usuarios.usuario  = '{model.Usuario}'");
             if (rsp1 == null){
                 var rsp = await repository.InsertByQuery(query);
                 return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "User correctly created", data: rsp);
@@ -93,8 +93,9 @@ public class AuthController : ControllerBase
             return new BaseResponse(false, (int)HttpStatusCode.InternalServerError, Ex.Message);
         }
     }
-    [HttpPatch]
-    [Route("AuthController/Patch")]
+
+    /*[HttpPatch]
+    [Route("AuthController/Patch")]*/
     
         
     
