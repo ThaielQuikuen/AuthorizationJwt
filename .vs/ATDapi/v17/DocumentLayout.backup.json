@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\source\\repos\\authorizationjwt\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\source\\repos\\authorizationjwt\\models\\recetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:models\\recetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\source\\repos\\authorizationjwt\\models\\dificultades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:models\\dificultades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\source\\repos\\authorizationjwt\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Dificultades.cs",
               "DocumentMoniker": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Models\\Dificultades.cs",
               "RelativeDocumentMoniker": "Models\\Dificultades.cs",
@@ -39,20 +39,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Recetas.cs",
               "DocumentMoniker": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Models\\Recetas.cs",
               "RelativeDocumentMoniker": "Models\\Recetas.cs",
               "ToolTip": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Models\\Recetas.cs",
               "RelativeToolTip": "Models\\Recetas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T17:22:51.194Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
