@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\ATDapi.csproj": {}
+    "C:\\Users\\rocio\\Source\\Repos\\authorizationJwt\\ATDapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\ATDapi.csproj": {
+    "C:\\Users\\rocio\\Source\\Repos\\authorizationJwt\\ATDapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\ATDapi.csproj",
+        "projectUniqueName": "C:\\Users\\rocio\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
         "projectName": "ATDapi",
-        "projectPath": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\ATDapi.csproj",
-        "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\obj\\",
+        "projectPath": "C:\\Users\\rocio\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
+        "packagesPath": "C:\\Users\\rocio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rocio\\Source\\Repos\\authorizationJwt\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\rocio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,9 +38,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -90,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

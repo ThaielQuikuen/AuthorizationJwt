@@ -44,29 +44,31 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
-        var rsp = await repository.GetByQuery<dynamic>($"SELECT password FROM Usuarios WHERE Usuarios.usuario  = '{model.Usuario}'");
+        var rsp = await repository.GetByQuery<dynamic>($"SELECT usuario_id, password FROM Usuarios WHERE Usuarios.usuario  = '{model.Usuario}'");
         var passwordHasher = new PasswordHasher<object>();
         var result = passwordHasher.VerifyHashedPassword(null, rsp.password, model.Password);
         if (result == PasswordVerificationResult.Success)
         {
-            var token = GenerateAccessToken(model.Usuario);
+            int userId = rsp.usuario_id;
+            var token = GenerateAccessToken(model.Usuario, userId);
 
             return Ok(new { AccessToken = new JwtSecurityTokenHandler().WriteToken(token) });
         }
         return Unauthorized("Invalid credentials");
     }
 
-    private JwtSecurityToken GenerateAccessToken(string userName)
+    private JwtSecurityToken GenerateAccessToken(string userName, int id)
     {
         var claims = new List<Claim>
         {
+            new Claim(ClaimTypes.NameIdentifier, id.ToString()),
             new Claim(ClaimTypes.Name, userName),
         };
         var token = new JwtSecurityToken(
             issuer: _configuration["JwtSettings:Issuer"],
             audience: _configuration["JwtSettings:Audience"],
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(1), // Token expiration time
+            expires: DateTime.UtcNow.AddMinutes(10), // Token expiration time
             signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"])),
                 SecurityAlgorithms.HmacSha256)
         );
