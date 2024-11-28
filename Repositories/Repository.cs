@@ -59,6 +59,15 @@ namespace ATDapi.Repositories;
                 }
             }
         }
+    //Query para modificar 
+    public async Task<int> UpdateAsync(string query)
+    {
+        using (OdbcConnection connection = new OdbcConnection(dbConnectionString))
+        {
+            return await connection.ExecuteAsync(query);
+        }
     }
+    
+}
 
 

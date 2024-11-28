@@ -18,5 +18,14 @@ namespace ATDapi.Models
         {
             return string.Format($"INSERT INTO Recetas(nombre, receta, ingredientes, porciones, fk_dificultad, fk_usuario) VALUES('{nombre}', '{receta}', '{ingredientes}', '{porciones}', {fk_dificultad}, {fk_usuario})");
         }
+        public string update(int recetaId)
+        {
+            return string.Format($"UPDATE Recetas SET nombre = '{nombre}', receta = '{receta}', ingredientes = '{ingredientes}', porciones = {porciones}, fk_dificultad = {fk_dificultad} WHERE id = {recetaId} AND fk_usuario = {fk_usuario}");
+        }
+        public string delete(int recetaId)
+        {
+            return string.Format($"DELETE FROM Recetas WHERE id = {recetaId} AND fk_usuario = {fk_usuario}");
+        }
+
     }
 }
