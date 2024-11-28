@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GRHLGUCEwXrZfg5181w81WLEHKxxpsks9kbjBktxTeXTTjJnNNdZ5SFuTXMyCgCYbUCaK/C1uWsD3kjyDUSByg==",
+  "dgSpecHash": "W+CU2u3rXtbGTavuOW22JMQsfXo+H7SulytuGPF804z7VoE5E2fGcPETs+M6YWcaOAKLKT9QfRlzcaf0T40VCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rocio\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
+  "projectFilePath": "C:\\Users\\rocio\\source\\repos\\authorizationJwt\\ATDapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rocio\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",

@@ -17,11 +17,34 @@ public class RecetasController : ControllerBase
     private Repository repository = new Repository();
     string tabla = "Recetas";
 
-    [HttpGet]
-    [Route("RecetasController/Get")]
+    /*[HttpGet]
+    [Route("Get")]
     public async Task<BaseResponse> Get()
     {
         string query = recetasModel.select(tabla); 
+        try
+        {
+            var rsp = await repository.GetListBy<dynamic>(query);
+            return new DataResponse<dynamic>(true, (int)HttpStatusCode.OK, "Lista de Recetas", data: rsp);
+        }
+        catch (Exception ex)
+        {
+            return new BaseResponse(false, (int)HttpStatusCode.InternalServerError, ex.Message);
+        }
+    }*/
+    [HttpGet]
+    [Route("Get")]
+    public async Task<BaseResponse> Get()
+    {
+        var usuarioIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+        if (usuarioIdClaim == null)
+        {
+            return new BaseResponse(false, (int)HttpStatusCode.Unauthorized, "Usuario no autenticado");
+        }
+
+        int userId = int.Parse(usuarioIdClaim.Value); // Obtén el ID del usuario autenticado
+        string query = recetasModel.select(tabla) + $" WHERE fk_usuario = {userId}"; // Filtra por el usuario
+
         try
         {
             var rsp = await repository.GetListBy<dynamic>(query);

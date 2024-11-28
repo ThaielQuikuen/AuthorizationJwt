@@ -68,7 +68,7 @@ public class AuthController : ControllerBase
             issuer: _configuration["JwtSettings:Issuer"],
             audience: _configuration["JwtSettings:Audience"],
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(10), // Token expiration time
+            expires: DateTime.UtcNow.AddMinutes(60), // Token expiration time
             signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"])),
                 SecurityAlgorithms.HmacSha256)
         );

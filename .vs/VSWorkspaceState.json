@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\Controllers",
+    "\\Models"
   ],
-  "SelectedNode": "\\ATDapi.sln",
+  "SelectedNode": "\\Models\\RecetasModel.cs",
   "PreviewInSolutionExplorer": false
 }
