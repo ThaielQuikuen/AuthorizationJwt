@@ -1,0 +1,5 @@
+CREATE PROCEDURE VerReceta
+AS 	
+BEGIN 
+	 SELECT * FROM Recetas;
+END;

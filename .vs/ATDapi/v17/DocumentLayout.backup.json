@@ -1,18 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\",
+  "WorkspaceRootPath": "C:\\Users\\kevin\\authorizationJwt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\source\\repos\\authorizationjwt\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\authorizationjwt\\controllers\\recetascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:controllers\\recetascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\source\\repos\\authorizationjwt\\models\\recetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:models\\recetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\AppData\\Local\\SourceServer\\0b895ca6a6d904b75a7d9cb5679741d89b2482bbce729593d4edd4aae4ec0666\\Controllers\\RecetasController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\source\\repos\\authorizationjwt\\models\\dificultades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:models\\dificultades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|c:\\users\\kevin\\authorizationjwt\\models\\recetasmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8FAA7EF-A142-44FE-B55E-91B3ACA6BF1F}|ATDapi.csproj|solutionrelative:models\\recetasmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +21,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Dificultades.cs",
-              "DocumentMoniker": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Models\\Dificultades.cs",
-              "RelativeDocumentMoniker": "Models\\Dificultades.cs",
-              "ToolTip": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Models\\Dificultades.cs",
-              "RelativeToolTip": "Models\\Dificultades.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T17:29:26.554Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Recetas.cs",
-              "DocumentMoniker": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Models\\Recetas.cs",
-              "RelativeDocumentMoniker": "Models\\Recetas.cs",
-              "ToolTip": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Models\\Recetas.cs",
-              "RelativeToolTip": "Models\\Recetas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "Title": "RecetasController.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\AppData\\Local\\SourceServer\\0b895ca6a6d904b75a7d9cb5679741d89b2482bbce729593d4edd4aae4ec0666\\Controllers\\RecetasController.cs",
+              "RelativeDocumentMoniker": "..\\AppData\\Local\\SourceServer\\0b895ca6a6d904b75a7d9cb5679741d89b2482bbce729593d4edd4aae4ec0666\\Controllers\\RecetasController.cs",
+              "ToolTip": "C:\\Users\\kevin\\AppData\\Local\\SourceServer\\0b895ca6a6d904b75a7d9cb5679741d89b2482bbce729593d4edd4aae4ec0666\\Controllers\\RecetasController.cs [Solo lectura]",
+              "RelativeToolTip": "..\\AppData\\Local\\SourceServer\\0b895ca6a6d904b75a7d9cb5679741d89b2482bbce729593d4edd4aae4ec0666\\Controllers\\RecetasController.cs [Solo lectura]",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAkwGUAAAAMAAAAAQAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T17:22:51.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-29T21:49:40.18Z",
+              "EditorCaption": " [Solo lectura]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\kevin\\source\\repos\\authorizationJwt\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAATAAAAAAAAAA==",
+              "Title": "RecetasController.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\authorizationJwt\\Controllers\\RecetasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecetasController.cs",
+              "ToolTip": "C:\\Users\\kevin\\authorizationJwt\\Controllers\\RecetasController.cs",
+              "RelativeToolTip": "Controllers\\RecetasController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAAwHEAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T11:14:12.997Z",
+              "WhenOpened": "2024-11-28T12:39:34.778Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RecetasModel.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\authorizationJwt\\Models\\RecetasModel.cs",
+              "RelativeDocumentMoniker": "Models\\RecetasModel.cs",
+              "ToolTip": "C:\\Users\\kevin\\authorizationJwt\\Models\\RecetasModel.cs",
+              "RelativeToolTip": "Models\\RecetasModel.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T18:47:49.483Z"
             }
           ]
         }

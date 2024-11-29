@@ -2,14 +2,13 @@
 
 namespace ATDapi.Models
 {
-    public class DificultadesModel : Queries
+    public class DificultadesModel
     {
         public int dificultad_id { get; set; }
 
         public string dificultad { get; set; }
-        public override string insert()
-        {
-            return string.Format($"INSERT INTO Dificultades(dificultad) VALUES('{dificultad}')");
-        }
+        
+
+
     }
 }

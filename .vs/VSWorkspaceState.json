@@ -5,6 +5,6 @@
     "\\Controllers",
     "\\Models"
   ],
-  "SelectedNode": "\\Models\\RecetasModel.cs",
+  "SelectedNode": "\\Controllers\\RecetasController.cs",
   "PreviewInSolutionExplorer": false
 }

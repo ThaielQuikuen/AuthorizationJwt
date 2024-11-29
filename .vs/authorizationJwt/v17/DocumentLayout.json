@@ -1,9 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\rocio\\source\\repos\\authorizationJwt\\",
+  "WorkspaceRootPath": "C:\\Users\\kevin\\authorizationJwt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\rocio\\source\\repos\\authorizationJwt\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\authorizationJwt\\Controllers\\RecetasController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\RecetasController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\authorizationJwt\\Controllers\\DificultadesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\DificultadesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kevin\\authorizationJwt\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -35,12 +43,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RecetasController.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\authorizationJwt\\Controllers\\RecetasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecetasController.cs",
+              "ToolTip": "C:\\Users\\kevin\\authorizationJwt\\Controllers\\RecetasController.cs*",
+              "RelativeToolTip": "Controllers\\RecetasController.cs*",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAIUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:04:52.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DificultadesController.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\authorizationJwt\\Controllers\\DificultadesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DificultadesController.cs",
+              "ToolTip": "C:\\Users\\kevin\\authorizationJwt\\Controllers\\DificultadesController.cs",
+              "RelativeToolTip": "Controllers\\DificultadesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T16:04:49.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\rocio\\source\\repos\\authorizationJwt\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\kevin\\authorizationJwt\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\rocio\\source\\repos\\authorizationJwt\\Program.cs",
+              "ToolTip": "C:\\Users\\kevin\\authorizationJwt\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-27T19:53:56.643Z",
               "EditorCaption": ""

@@ -21,10 +21,10 @@ public class DificultadesController : ControllerBase
     [Route("Get")]
     public async Task<BaseResponse> Get()
     {
-        string query = dificultadesModel.select(tabla); 
+    
         try
         {
-            var rsp = await repository.GetListBy<dynamic>(query);
+            var rsp = await repository.GetListFromProcedure<dynamic>("ObtenerDificultades");
             return new DataResponse<dynamic>(true, (int)HttpStatusCode.OK, "Lista de Recetas", data: rsp);
         }
         catch (Exception ex)

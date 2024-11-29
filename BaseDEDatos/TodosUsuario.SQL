@@ -1,0 +1,5 @@
+CREATE PROCEDURE TodosUsuario
+AS 	
+BEGIN 
+	 SELECT * FROM Usuario;
+END;

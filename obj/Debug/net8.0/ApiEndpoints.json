@@ -46,35 +46,9 @@
     ]
   },
   {
-    "ContainingType": "ATDapi.Controllers.DemoController",
-    "Method": "Delete",
-    "RelativePath": "Delete",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ATDapi.Responses.BaseResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ATDapi.Controllers.DemoController",
+    "ContainingType": "DificultadesController",
     "Method": "Get",
-    "RelativePath": "Get",
+    "RelativePath": "Dificultades/Get",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -108,16 +82,52 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ATDapi.Controllers.DemoController",
+    "ContainingType": "RecetasController",
+    "Method": "DeleteRecipe",
+    "RelativePath": "Recetas/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RecetasController",
+    "Method": "Get",
+    "RelativePath": "Recetas/Get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ATDapi.Responses.BaseResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RecetasController",
     "Method": "Patch",
-    "RelativePath": "Patch",
+    "RelativePath": "Recetas/Patch",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dataInput",
-        "Type": "ATDapi.Models.SimpleModel",
+        "Name": "model",
+        "Type": "ATDapi.Models.RecetasModel",
         "IsRequired": true
       }
     ],
@@ -134,42 +144,16 @@
     ]
   },
   {
-    "ContainingType": "ATDapi.Controllers.DemoController",
+    "ContainingType": "RecetasController",
     "Method": "Post",
-    "RelativePath": "Post",
+    "RelativePath": "Recetas/post",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dataInput",
-        "Type": "ATDapi.Models.SimpleModel",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ATDapi.Responses.BaseResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ATDapi.Controllers.DemoController",
-    "Method": "Put",
-    "RelativePath": "Put",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dataInput",
-        "Type": "ATDapi.Models.SimpleModel",
+        "Name": "model",
+        "Type": "ATDapi.Models.RecetasModel",
         "IsRequired": true
       }
     ],

@@ -1,12 +1,14 @@
 ﻿
+using Dapper;
+using MathNet.Numerics.RootFinding;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace ATDapi.Models
 {
-    public class RecetasModel : Queries
+    public class RecetasModel
     {
-        public int? id { get; set; }
+        public int id { get; set; }
         public string? nombre { get; set; }
         public string? receta { get; set; }
         public string? ingredientes { get; set; }
@@ -14,18 +16,43 @@ namespace ATDapi.Models
         public int? fk_dificultad {  get; set; }
         public int? fk_usuario { get; set; }
 
-        public override string insert()
+        public DynamicParameters insert()
         {
-            return string.Format($"INSERT INTO Recetas(nombre, receta, ingredientes, porciones, fk_dificultad, fk_usuario) VALUES('{nombre}', '{receta}', '{ingredientes}', '{porciones}', {fk_dificultad}, {fk_usuario})");
-        }
-        public string update(int recetaId)
-        {
-            return string.Format($"UPDATE Recetas SET nombre = '{nombre}', receta = '{receta}', ingredientes = '{ingredientes}', porciones = {porciones}, fk_dificultad = {fk_dificultad} WHERE id = {recetaId} AND fk_usuario = {fk_usuario}");
-        }
-        public string delete(int recetaId)
-        {
-            return string.Format($"DELETE FROM Recetas WHERE id = {recetaId} AND fk_usuario = {fk_usuario}");
+            var dp = new DynamicParameters();
+            dp.Add("nombre", nombre);
+            dp.Add("receta", receta);
+            dp.Add("ingredientes", ingredientes);
+            dp.Add("porciones", porciones);
+            dp.Add("fk_dificultad", fk_dificultad);
+            dp.Add("fk_usuario", fk_usuario);
+            return dp;
         }
 
+        public DynamicParameters select(int id)
+        {
+            var dp = new DynamicParameters();
+            dp.Add("usuario_id",id);
+            return dp;
+        }
+
+        public DynamicParameters modificar(int receta_id)
+        {
+            var dp = new DynamicParameters();
+            dp.Add("receta_id", receta_id);
+            dp.Add("nombre", nombre);
+            dp.Add("receta", receta);
+            dp.Add("ingredientes", ingredientes);
+            dp.Add("porciones", porciones);
+            dp.Add("fk_dificultad", fk_dificultad);
+            dp.Add("fk_usuario", fk_usuario);
+            return dp;
+        }
+
+        public DynamicParameters delete(int receta_id)
+        {
+            var dp = new DynamicParameters();
+            dp.Add("receta_id",receta_id);
+            return dp;
+        }
     }
 }

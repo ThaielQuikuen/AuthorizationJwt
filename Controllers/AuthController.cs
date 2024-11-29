@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ATDapi.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 public class AuthController : ControllerBase
@@ -28,11 +29,9 @@ public class AuthController : ControllerBase
     [Route("AuthController/Get")]
     public async Task<BaseResponse> Get()
     {
-        var pathBase = HttpContext.User.Claims;
-        string query = loginModel.select(tabla);
         try
         {
-            var rsp = await repository.GetListBy<dynamic>(query);
+            var rsp = await repository.GetListFromProcedure<dynamic>("TodosUsuario");
             return new DataResponse<dynamic>(true, (int)HttpStatusCode.OK, "Lista de entidades", data: rsp);
         }
         catch (Exception ex)
@@ -44,18 +43,20 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
-        var rsp = await repository.GetByQuery<dynamic>($"SELECT usuario_id, password FROM Usuarios WHERE Usuarios.usuario  = '{model.Usuario}'");
+        var rsp = await repository.GetListFromProcedure<UsuarioLogueado>("LoginUsuario",model.Login());
+        var user = rsp.FirstOrDefault();
         var passwordHasher = new PasswordHasher<object>();
-        var result = passwordHasher.VerifyHashedPassword(null, rsp.password, model.Password);
+        var result = passwordHasher.VerifyHashedPassword(null, user.password, model.Password);
         if (result == PasswordVerificationResult.Success)
         {
-            int userId = rsp.usuario_id;
+            int userId = user.usuario_id;
             var token = GenerateAccessToken(model.Usuario, userId);
 
             return Ok(new { AccessToken = new JwtSecurityTokenHandler().WriteToken(token) });
         }
         return Unauthorized("Invalid credentials");
     }
+    
 
     private JwtSecurityToken GenerateAccessToken(string userName, int id)
     {
@@ -79,12 +80,12 @@ public class AuthController : ControllerBase
     [Route("AuthController/post")]
     public async Task<BaseResponse> Post([FromBody] LoginModel model)
     {
-        string query = model.insert();
+
         try
         {
-            var rsp1 = await repository.GetByQuery<dynamic>($"SELECT usuario  FROM Usuarios WHERE Usuarios.usuario  = '{model.Usuario}'");
+            var rsp1 = await repository.GetListFromProcedure<dynamic>("ExisteUsuario",model.Existe());
             if (rsp1 == null){
-                var rsp = await repository.InsertByQuery(query);
+                var rsp = await repository.ExecuteProcedure("CargarUsuario",model.insert());
                 return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "User correctly created", data: rsp);
             }else{
                 return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "El numbre de usuario ya existe. Elija uno distinto", data: rsp1);
@@ -96,8 +97,6 @@ public class AuthController : ControllerBase
         }
     }
 
-    /*[HttpPatch]
-    [Route("AuthController/Patch")]*/
     
         
     

@@ -16,6 +16,7 @@ public class RecetasController : ControllerBase
 {
     private RecetasModel recetasModel = new RecetasModel();
     private Repository repository = new Repository();
+
     string tabla = "Recetas";
 
     /*[HttpGet]
@@ -44,11 +45,10 @@ public class RecetasController : ControllerBase
         }
 
         int userId = int.Parse(usuarioIdClaim.Value); 
-        string query = recetasModel.select(tabla) + $" WHERE fk_usuario = {userId}"; // ver recetas solo del usuario aut
 
         try
         {
-            var rsp = await repository.GetListBy<dynamic>(query);
+            var rsp = await repository.GetListFromProcedure<dynamic>("VerRecetaPorUsuario",recetasModel.select(userId));
             return new DataResponse<dynamic>(true, (int)HttpStatusCode.OK, "Lista de Recetas", data: rsp);
         }
         catch (Exception ex)
@@ -70,15 +70,13 @@ public class RecetasController : ControllerBase
             {
                 return new BaseResponse(false, (int)HttpStatusCode.Unauthorized, "Usuario no autenticado");
             }
-
             // Log para debugging
             Console.WriteLine($"Usuario autenticado con ID: {usuarioIdClaim.Value}");
             // Asigna el `fk_usuario` al modelo
             model.fk_usuario = int.Parse(usuarioIdClaim.Value);
 
             // Inserta el registro
-            string query = model.insert();
-            var rsp = await repository.InsertByQuery(query);
+            var rsp = await repository.ExecuteProcedure("CargarReceta",model.insert());
 
             return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "Receta creada correctamente", data: rsp);
         }
@@ -94,26 +92,14 @@ public class RecetasController : ControllerBase
     {
         try
         {
-            // Verifica si la receta existe
             var usuarioIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
             if (usuarioIdClaim == null)
             {
                 return new BaseResponse(false, (int)HttpStatusCode.Unauthorized, "Usuario no autenticado");
             }
-
-            int userId = int.Parse(usuarioIdClaim.Value);
-            if (model.fk_usuario != userId)
-            {
-                return new BaseResponse(false, (int)HttpStatusCode.Forbidden, "No puedes modificar recetas de otros usuarios");
-            }
-
-            // Llama al método update del modelo para generar la consulta SQL
-            string query = model.update(model.id.Value);
-
-            // Ejecuta la consulta utilizando el repositorio
-            var rsp = await repository.InsertByQuery(query); // Usamos InsertByQuery porque el método genera una consulta SQL
-
-            // Verifica si se afectó alguna fila (si rsp > 0 significa que se hizo la actualización)
+            Console.WriteLine(model.modificar(model.id));
+            model.fk_usuario = 1;
+            int rsp = await repository.ExecuteProcedure("ModificarReceta", model.modificar(model.id));
             if (rsp > 0)
             {
                 return new DataResponse<dynamic>(true, (int)HttpStatusCode.OK, "Receta actualizada correctamente", data: rsp);
@@ -128,17 +114,16 @@ public class RecetasController : ControllerBase
             return new BaseResponse(false, (int)HttpStatusCode.InternalServerError, ex.Message);
         }
     }
-    [HttpDelete("Delete/{id}")]
-    public async Task<IActionResult> DeleteRecipe(int id)
+    
+
+    [HttpDelete]
+    [Route("Delete")]
+    public async Task<IActionResult> DeleteRecipe([FromQuery]int id)
     {
         try
         {
-            var usuarioId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
-            string query = recetasModel.delete(id);
-
             // Ejecutar la consulta
-            int result = await repository.DeleteAsync(query); 
-
+            int result = await repository.ExecuteProcedure("EliminarReceta",recetasModel.delete(id)); 
             if (result > 0)
             {
                 return Ok(new { message = "Receta eliminada exitosamente" });

@@ -1,13 +1,15 @@
 
+using Dapper;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ATDapi.Models;
 
 
-public class LoginModel : Queries
+public class LoginModel
 {
-    public int? id { get; set; }
+    public int id { get; set; }
     [Required(ErrorMessage = "El nombre de usuario es requerido.")]
     public string Usuario { get; set; }
 
@@ -16,16 +18,35 @@ public class LoginModel : Queries
     public string Password { get; set; }
 
 
+
     public string HashearPassword(string password)
     {
         var passwordHasher = new PasswordHasher<object>();
         return passwordHasher.HashPassword(null, password);
     }
 
-    public override string insert()
+    public DynamicParameters Login()
     {
-        string hash = this.HashearPassword(this.Password);
-        return string.Format($"INSERT INTO Usuarios(usuario , password) VALUES('{Usuario}','{hash}')");
+        var dp = new DynamicParameters();
+        dp.Add("usuario", this.Usuario);
+        return dp;
     }
+
+    public DynamicParameters insert()
+    {
+        var dp = new DynamicParameters();
+        dp.Add("usuario", Usuario);
+        dp.Add("password", HashearPassword(Password));
+        return dp;
+    }
+
+    public DynamicParameters Existe()
+    {
+        var dp = new DynamicParameters();
+        dp.Add("usuario", Usuario);
+        return dp;
+    }
+
+
 
 }
