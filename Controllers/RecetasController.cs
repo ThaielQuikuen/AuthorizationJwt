@@ -118,7 +118,7 @@ public class RecetasController : ControllerBase
 
     [HttpDelete]
     [Route("Delete")]
-    public async Task<IActionResult> DeleteRecipe([FromQuery]int id)
+    public async Task<BaseResponse> DeleteRecipe([FromQuery]int id)
     {
         try
         {
@@ -126,16 +126,16 @@ public class RecetasController : ControllerBase
             int result = await repository.ExecuteProcedure("EliminarReceta",recetasModel.delete(id)); 
             if (result > 0)
             {
-                return Ok(new { message = "Receta eliminada exitosamente" });
+                return new BaseResponse(true, (int)HttpStatusCode.OK, "Receta eliminada exitosamente");
             }
             else
             {
-                return NotFound(new { message = "No se encontró la receta o no tienes permiso para eliminarla" });
+                return new BaseResponse(false, (int)HttpStatusCode.NotFound, "No se encontró la receta o no tienes permiso para eliminarla");
             }
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Ocurrió un error al eliminar la receta", error = ex.Message });
+            return new BaseResponse(false, (int)HttpStatusCode.InternalServerError, ex.Message);
         }
     }
 
