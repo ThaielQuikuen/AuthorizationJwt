@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "xqoyGQkmHeB4fqf93Vxyby9H7cS/J9/8LDRTlZVOt7U=",
+  "Hash": "vKcQX+aMTTNObBuczWaHgIzw4uaDY6RfRVOwr2t/rsE=",
   "Source": "ATDapi",
   "BasePath": "_content/ATDapi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

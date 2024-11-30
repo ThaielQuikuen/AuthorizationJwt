@@ -88,7 +88,7 @@ public class AuthController : ControllerBase
                 var rsp = await repository.ExecuteProcedure("CargarUsuario",model.insert());
                 return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "User correctly created", data: rsp);
             }else{
-                return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "El numbre de usuario ya existe. Elija uno distinto", data: rsp1);
+                return new DataResponse<dynamic>(false, (int)HttpStatusCode.Created, "El nombre de usuario ya existe. Elija uno distinto", data: rsp1);
             }     
         }
         catch (Exception Ex)
