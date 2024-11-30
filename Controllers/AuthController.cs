@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using ATDapi.Responses;
 using ATDapi.Models;
 using System.IdentityModel.Tokens.Jwt;
@@ -9,21 +8,19 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ATDapi.Repositories;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 public class AuthController : ControllerBase
 {
-    private IConfiguration _configuration;
-    private LoginModel loginModel = new LoginModel();
-    private Repository repository = new Repository();
+    private readonly IConfiguration _configuration;
+    private readonly LoginModel loginModel = new LoginModel();
+    private readonly Repository repository = new Repository();
 
     public AuthController(IConfiguration configuration)
     {
         this._configuration = configuration;
     }
 
-    string tabla = "Usuarios";
 
     [HttpGet]
     [Route("AuthController/Get")]
@@ -43,20 +40,22 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
     {
-        var rsp = await repository.GetListFromProcedure<UsuarioLogueado>("LoginUsuario",model.Login());
+        var rsp = await repository.GetListFromProcedure<UsuarioLogueado>("LoginUsuario", model.Login());
         var user = rsp.FirstOrDefault();
-        var passwordHasher = new PasswordHasher<object>();
-        var result = passwordHasher.VerifyHashedPassword(null, user.password, model.Password);
-        if (result == PasswordVerificationResult.Success)
+        if (user != null && !string.IsNullOrEmpty(user.password))
         {
-            int userId = user.usuario_id;
-            var token = GenerateAccessToken(model.Usuario, userId);
-
-            return Ok(new { AccessToken = new JwtSecurityTokenHandler().WriteToken(token) });
+            var passwordHasher = new PasswordHasher<object>();
+            var result = passwordHasher.VerifyHashedPassword(null, user.password, model.Password);
+            if (result == PasswordVerificationResult.Success)
+            {
+                int userId = user.usuario_id;
+                var token = GenerateAccessToken(model.Usuario, userId);
+                return Ok(new { AccessToken = new JwtSecurityTokenHandler().WriteToken(token) });
+            }
         }
         return Unauthorized("Invalid credentials");
     }
-    
+
 
     private JwtSecurityToken GenerateAccessToken(string userName, int id)
     {
@@ -82,14 +81,17 @@ public class AuthController : ControllerBase
     {
         try
         {
-            var rsp1 = await repository.GetListFromProcedure<dynamic>("ExisteUsuario",model.Existe(model.Usuario));
+            var rsp1 = await repository.GetListFromProcedure<dynamic>("ExisteUsuario", model.Existe(model.Usuario));
             int cont = rsp1.Count;
-            if (cont == 0){
-                var rsp = await repository.ExecuteProcedure("CargarUsuario",model.insert());
-                return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "User correctly created", data: rsp);
-            }else{
+            if (cont == 0)
+            {
+                var rsp = await repository.ExecuteProcedure("CargarUsuario", model.insert());
+                return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "Usuario creado correctamente", data: rsp);
+            }
+            else
+            {
                 return new DataResponse<dynamic>(false, (int)HttpStatusCode.Created, "El nombre de usuario ya existe. Elija uno distinto", data: rsp1);
-            }     
+            }
         }
         catch (Exception Ex)
         {
@@ -97,9 +99,9 @@ public class AuthController : ControllerBase
         }
     }
 
-    
-        
-    
+
+
+
 
 
 }

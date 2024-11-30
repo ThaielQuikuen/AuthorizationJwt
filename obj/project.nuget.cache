@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JAPBf7jKvDNaE1mb6hkeVg/wfJty05JbIBSKbbw/5VVIDrL4sKJRbxh0gokAlIThBrkUjckhEhroVwJFNW//0w==",
+  "dgSpecHash": "FCN2VIUAdiqGOMlKq9a4G94ETJcwK4tUp+BNVHLX7rdx98d4rMPnz5TqXTkXddIUJ8E7/9xRQuu8j//Q5q2sFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rocio\\Source\\Repos\\authorizationJwt\\ATDapi.csproj",
+  "projectFilePath": "C:\\Users\\rocio\\source\\repos\\authorizationJwt\\ATDapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rocio\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\rocio\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

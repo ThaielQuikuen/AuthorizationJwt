@@ -1,8 +1,5 @@
 ﻿
 using Dapper;
-using MathNet.Numerics.RootFinding;
-using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
 
 namespace ATDapi.Models
 {

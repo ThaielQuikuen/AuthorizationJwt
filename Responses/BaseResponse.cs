@@ -1,15 +1,13 @@
-using ATDapi.Models;
-
 
 namespace ATDapi.Responses;
 
 //Este es el objeto base response, que se utiliza para todas las respuestas formadas ante una request
 public class BaseResponse
 {
-    public bool success {get; set;}          //Bool que indica si el proceso realizado fue exitoso
-    public bool error {get; set;}           //Bool que indica si existio un error en el proceso
-    public int code {get; set;}             //Int que almacena el Http Status code de la respuesta //Doc. StatusCodes https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
-    public string message {get; set;}       //String donde se envia el mensaje de la respuesta
+    public bool success { get; set; }          //Bool que indica si el proceso realizado fue exitoso
+    public bool error { get; set; }           //Bool que indica si existio un error en el proceso
+    public int code { get; set; }             //Int que almacena el Http Status code de la respuesta //Doc. StatusCodes https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+    public string message { get; set; }       //String donde se envia el mensaje de la respuesta
 
     public BaseResponse(bool success, int code, string message)
     {
@@ -28,9 +26,9 @@ public class DataResponse<T> : BaseResponse
 {
     private List<T> dataList;
 
-    public new T data {get; set;} = default;
+    public new T data { get; set; } = default;
 
-    public DataResponse(bool succes, int code, string message, T data = default) : base (succes, code, message)
+    public DataResponse(bool succes, int code, string message, T data = default) : base(succes, code, message)
     {
         this.data = data;
     }

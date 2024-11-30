@@ -35,9 +35,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //por ahora el unico que agregaremos es el servicio de Cors Policy ya visto anteriormente en clase.
 //pero tengan en cuenta que las politicas de autenticacion deberan ser declaradas en este espacio para
 //futuros proyectos que lo requieran. No es necesario que toquen este archivo.
-builder.Services.AddCors(options => 
+builder.Services.AddCors(options =>
     {
-        options.AddDefaultPolicy(policy => {
+        options.AddDefaultPolicy(policy =>
+        {
             policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
         });
     }

@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using System.Security.Claims;
 
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
@@ -13,15 +12,12 @@ using System.Security.Claims;
 
 public class DificultadesController : ControllerBase
 {
-    private DificultadesModel dificultadesModel = new DificultadesModel();
-    private Repository repository = new Repository();
-    string tabla = "Dificultades";
+    private readonly Repository repository = new Repository();
 
     [HttpGet]
     [Route("Get")]
     public async Task<BaseResponse> Get()
     {
-    
         try
         {
             var rsp = await repository.GetListFromProcedure<dynamic>("ObtenerDificultades");
@@ -33,6 +29,6 @@ public class DificultadesController : ControllerBase
         }
     }
 
-    
+
 }
 

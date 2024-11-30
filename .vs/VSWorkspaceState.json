@@ -1,10 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\bin",
-    "\\Controllers",
-    "\\Models"
+    ""
   ],
-  "SelectedNode": "\\Controllers\\RecetasController.cs",
   "PreviewInSolutionExplorer": false
 }
