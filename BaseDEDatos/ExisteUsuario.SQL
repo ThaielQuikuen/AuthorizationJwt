@@ -1,6 +1,6 @@
-CREATE PROCEDURE ExisteUsuario
-	@usuario2 VARCHAR(15)
+ALTER PROCEDURE ExisteUsuario
+	@usuario VARCHAR(15)
 AS 	
 BEGIN 
-	 SELECT usuario FROM Usuarios WHERE Usuarios.usuario  = '@usuario2';
+	 SELECT usuario FROM Usuarios WHERE usuario  = @usuario;
 END;

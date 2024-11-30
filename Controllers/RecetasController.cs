@@ -97,8 +97,8 @@ public class RecetasController : ControllerBase
             {
                 return new BaseResponse(false, (int)HttpStatusCode.Unauthorized, "Usuario no autenticado");
             }
-            Console.WriteLine(model.modificar(model.id));
-            model.fk_usuario = 1;
+   
+            
             int rsp = await repository.ExecuteProcedure("ModificarReceta", model.modificar(model.id));
             if (rsp > 0)
             {

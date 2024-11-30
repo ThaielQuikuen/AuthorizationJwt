@@ -80,11 +80,11 @@ public class AuthController : ControllerBase
     [Route("AuthController/post")]
     public async Task<BaseResponse> Post([FromBody] LoginModel model)
     {
-
         try
         {
-            var rsp1 = await repository.GetListFromProcedure<dynamic>("ExisteUsuario",model.Existe());
-            if (rsp1 == null){
+            var rsp1 = await repository.GetListFromProcedure<dynamic>("ExisteUsuario",model.Existe(model.Usuario));
+            int cont = rsp1.Count;
+            if (cont == 0){
                 var rsp = await repository.ExecuteProcedure("CargarUsuario",model.insert());
                 return new DataResponse<dynamic>(true, (int)HttpStatusCode.Created, "User correctly created", data: rsp);
             }else{

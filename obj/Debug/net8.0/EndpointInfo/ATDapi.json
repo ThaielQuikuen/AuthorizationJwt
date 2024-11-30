@@ -284,7 +284,24 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -295,7 +312,7 @@
       "BaseResponse": {
         "type": "object",
         "properties": {
-          "succes": {
+          "success": {
             "type": "boolean"
           },
           "error": {

@@ -44,7 +44,6 @@ namespace ATDapi.Models
             dp.Add("ingredientes", ingredientes);
             dp.Add("porciones", porciones);
             dp.Add("fk_dificultad", fk_dificultad);
-            dp.Add("fk_usuario", fk_usuario);
             return dp;
         }
 

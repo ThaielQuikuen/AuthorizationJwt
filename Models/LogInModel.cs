@@ -40,7 +40,7 @@ public class LoginModel
         return dp;
     }
 
-    public DynamicParameters Existe()
+    public DynamicParameters Existe(string Usuario)
     {
         var dp = new DynamicParameters();
         dp.Add("usuario", Usuario);

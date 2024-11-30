@@ -8,5 +8,5 @@ CREATE PROCEDURE CargarReceta
 AS
 BEGIN
 	INSERT INTO Recetas(nombre, receta, ingredientes, porciones, fk_dificultad, fk_usuario) 
-	VALUES('@nombre', '@receta', '@ingredientes', @porciones, @fk_dificultad, @fk_usuario);
+	VALUES(@nombre, @receta, @ingredientes, @porciones, @fk_dificultad, @fk_usuario);
 END;
