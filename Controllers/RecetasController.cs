@@ -101,6 +101,11 @@ public class RecetasController : ControllerBase
     {
         try
         {
+            var usuarioIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+            if (usuarioIdClaim == null)
+            {
+                return new BaseResponse(false, (int)HttpStatusCode.Unauthorized, "Usuario no autenticado");
+            }
             int result = await repository.ExecuteProcedure("EliminarReceta", recetasModel.delete(id));
             if (result > 0)
             {
